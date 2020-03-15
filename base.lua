@@ -556,7 +556,7 @@ AddEventHandler("vRPcli:playerSpawned", function()
 
     -- show loading
     vRPclient.setProgressBar(player,{"vRP:loading", "botright", "Loading...", 0,0,0, 100})
-    MySQL.execute("vRP/set_username", {user_id = user_id, username = GetPlayerName(player)})
+   
 
     SetTimeout(2000, function() -- trigger spawn event
       TriggerEvent("vRP:playerSpawn",user_id,player,first_spawn)
