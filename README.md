@@ -13,7 +13,8 @@ Paste base.lua in vrp
 
 # Paste this two fuction in vrp/modules/admin.lua
 
-local function ch_tempban(player,choice)
+
+	local function ch_tempban(player,choice)
 
 	local user_id = vRP.getUserId(player)
 	
@@ -86,7 +87,7 @@ local function ch_tempban(player,choice)
 end
 
 
-local function ch_ban(player,choice)
+	local function ch_ban(player,choice)
 
     local user_id = vRP.getUserId(player)
     
