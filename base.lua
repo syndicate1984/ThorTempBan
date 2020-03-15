@@ -105,8 +105,12 @@ function split(str, pat)
 end
 
 And the last one step is to replace the 'if not banned then' line with ` if not banned and (tostring(actDate) == tostring(banHash[2]) or tostring(actDate) <= tostring(banHash[2]))  then`
-	and you put that over at if not banned and (tostring(actDate) == tostring(banHash[2]) or tostring(actDate) <= tostring(banHash[2]))  then
+	and you put 
+	vRP.getBannedTime(user_id,function(banDate)
+	actDate = os.time(year,month,day) 
 	banHash = split(banDate, " ")
+				
+	over at "if not banned and (tostring(actDate) == tostring(banHash[2]) or tostring(actDate) <= tostring(banHash[2]))  then"
 
 		Now, you need to replace admin module ban function with this one:
 
