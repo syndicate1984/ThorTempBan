@@ -5,6 +5,8 @@ Depedencies: vRP
 
 # How to install 
 
+https://www.youtube.com/watch?v=zLzZ9y9rC0w
+
 # Copy&Paste
 
 Paste base.lua in vrp
