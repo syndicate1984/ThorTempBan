@@ -11,7 +11,7 @@ Paste base.lua in vrp
 
 # Vrp/modules/admin.lua
 
-# Paste this two fuction in vrp/modules/admin.lua
+# Paste this fuction in vrp/modules/admin.lua
 
 
 	local function ch_tempban(player,choice)
@@ -84,8 +84,9 @@ Paste base.lua in vrp
 		
 	end
 	
-end
+	end
 
+# Replace local fuction ch_ban with this one
 
 	local function ch_ban(player,choice)
 
@@ -115,7 +116,7 @@ end
 	
     end
     
-end
+	end
 
 
 # Add this to your admin menu
