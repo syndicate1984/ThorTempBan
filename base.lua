@@ -105,7 +105,7 @@ MySQL.createCommand("vRP/set_whitelisted","UPDATE vrp_users SET whitelisted = @w
 MySQL.createCommand("vRP/set_last_login","UPDATE vrp_users SET last_login = @last_login WHERE id = @user_id")
 MySQL.createCommand("vRP/get_last_login","SELECT last_login FROM vrp_users WHERE id = @user_id")
 
-MySQL.createCommand("vRP/set_username","UPDATE vrp_users SET username = @username WHERE id = @user_id")
+
 
 -- init tables
 print("[vRP] init base tables")
