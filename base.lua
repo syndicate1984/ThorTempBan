@@ -105,7 +105,7 @@ MySQL.createCommand("vRP/set_whitelisted","UPDATE vrp_users SET whitelisted = @w
 MySQL.createCommand("vRP/set_last_login","UPDATE vrp_users SET last_login = @last_login WHERE id = @user_id")
 MySQL.createCommand("vRP/get_last_login","SELECT last_login FROM vrp_users WHERE id = @user_id")
 
-
+MySQL.createCommand("vRP/set_username","UPDATE vrp_users SET username = @username WHERE id = @user_id")
 
 -- init tables
 print("[vRP] init base tables")
@@ -426,7 +426,7 @@ AddEventHandler("playerConnecting",function(name,setMessage, deferrals)
             actDate = os.time(year,month,day) 
             --  not (actDate == banDate or actDate <= banDate) 
             banHash = split(banDate, " ")
-            if not banned and (tostring(actDate) == tostring(banHash[2]) or tostring(actDate) <= tostring(banHash[2]))  then
+            if not banned and (tostring(actDate) == tostring(banHash[2])) and (tostring(actDate) <= tostring(banHash[2]))  then
               print(banDate, banHash[2], actDate)
               deferrals.update("[vRP] Checking whitelisted...")
               vRP.isWhitelisted(user_id, function(whitelisted)
@@ -556,7 +556,7 @@ AddEventHandler("vRPcli:playerSpawned", function()
 
     -- show loading
     vRPclient.setProgressBar(player,{"vRP:loading", "botright", "Loading...", 0,0,0, 100})
-   
+    MySQL.execute("vRP/set_username", {user_id = user_id, username = GetPlayerName(player)})
 
     SetTimeout(2000, function() -- trigger spawn event
       TriggerEvent("vRP:playerSpawn",user_id,player,first_spawn)
